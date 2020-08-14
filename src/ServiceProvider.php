@@ -34,6 +34,6 @@ class ServiceProvider extends IlluminateServiceProvider
             ->namespace('Dwapp\Api\Controllers')
             ->group(__DIR__ . '/../routes.php');
 
-        //$this->loadRoutesFrom(__DIR__ . '/../routes.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes.php');
     }
 }
