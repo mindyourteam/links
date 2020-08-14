@@ -1,0 +1,12 @@
+{
+    "name": "dwapp/api",
+    "description": "Temporary API endpoints for the DW apps during development",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Olav Schettler",
+            "email": "olav.schettler@dw.com"
+        }
+    ],
+    "require": {}
+}
