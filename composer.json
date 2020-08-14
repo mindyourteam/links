@@ -8,5 +8,17 @@
             "email": "olav.schettler@dw.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dwapp\\Api\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dwapp\\Api\\ServiceProvider"
+            ]
+        }
+    }
 }
