@@ -1,14 +1,11 @@
 <?php
 
-namespace Mindyourteam\Urls;
+namespace Mindyourteam\Links;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Mindyourteam\Core\Console\Commands\ImportEpics;
-use Mindyourteam\Core\Console\Commands\ClientQuestions;
-use Mindyourteam\Core\Console\Commands\SendQuestion;
 use Illuminate\Pagination\Paginator;
 
 class ServiceProvider extends IlluminateServiceProvider
@@ -24,14 +21,14 @@ class ServiceProvider extends IlluminateServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->mergeConfigRecursiveFrom(
-            __DIR__ . '/../config.php', 'urls'
+            __DIR__ . '/../config.php', 'links'
         );
     }
 
     public function register()
     {
         Route::middleware('web')
-            ->namespace('Mindyourteam\Urls\Controllers')
+            ->namespace('Mindyourteam\Links\Controllers')
             ->group(__DIR__ . '/../routes.php');
     }
 }

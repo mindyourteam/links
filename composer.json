@@ -1,5 +1,5 @@
 {
-    "name": "mindyourteam/urls",
+    "name": "mindyourteam/links",
     "description": "An URL shortener for your team",
     "type": "library",
     "authors": [
@@ -12,13 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Mindyourteam\\Urls\\": "src/"
+            "Mindyourteam\\Links\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mindyourteam\\Urls\\ServiceProvider"
+                "Mindyourteam\\Links\\ServiceProvider"
             ]
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mindyourteam\Urls;
+namespace Mindyourteam\Links;
 
 use Illuminate\Database\Eloquent\Model;
 

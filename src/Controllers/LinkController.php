@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Mindyourteam\Links\Controllers;
 
-use App\Link;
+use Mindyourteam\Links\Models\Link;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
@@ -12,9 +13,9 @@ class LinkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function admin()
     {
-        //
+        return view('links.admin');
     }
 
     /**
