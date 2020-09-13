@@ -20,9 +20,10 @@ class ServiceProvider extends IlluminateServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->mergeConfigRecursiveFrom(
-            __DIR__ . '/../config.php', 'links'
+        $this->mergeConfigFrom(
+            __DIR__ . '/../link.php', 'crud.link'
         );
+        $this->loadViewsFrom(__DIR__ . '/../views', 'link');
     }
 
     public function register()

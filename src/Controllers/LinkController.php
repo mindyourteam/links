@@ -3,84 +3,54 @@
 namespace Mindyourteam\Links\Controllers;
 
 use Mindyourteam\Links\Models\Link;
+use Mindyourteam\Links\Requests\LinkRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Knowfox\Crud\Services\Crud;
 
 class LinkController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function admin()
+    protected $crud;
+
+    public function __construct(Crud $crud)
     {
-        return view('links.admin');
+        $this->crud = $crud;
+        $this->crud->setup('crud.link');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function index(Request $request)
+    {
+        return $this->crud->index($request);
+    }
+
     public function create()
     {
-        //
+        return $this->crud->create();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(LinkRequest $request)
     {
-        //
+        list($link, $response) = $this->crud->store($request);
+        return $response;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Link $link)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Link  $link
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Link $link)
     {
-        //
+        return $this->crud->edit($link);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Link $link)
+    public function update(LinkRequest $request, Link $link)
     {
-        //
+        return $this->crud->update($request, $link);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Link  $link
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Link $link)
     {
-        //
+        return $this->crud->destroy($link);
+    }
+
+    public function show(Link $link)
+    {
+        return redirect($link->url);
     }
 }
