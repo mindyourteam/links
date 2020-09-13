@@ -1,6 +1,6 @@
 <?php
 
-namespace Dwapp\Api;
+namespace Mindyourteam\Urls;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
@@ -24,16 +24,14 @@ class ServiceProvider extends IlluminateServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->mergeConfigRecursiveFrom(
-            __DIR__ . '/../config.php', 'dwapp'
+            __DIR__ . '/../config.php', 'urls'
         );
     }
 
     public function register()
     {
         Route::middleware('web')
-            ->namespace('Dwapp\Api\Controllers')
+            ->namespace('Mindyourteam\Urls\Controllers')
             ->group(__DIR__ . '/../routes.php');
-
-        $this->loadRoutesFrom(__DIR__ . '/../routes.php');
     }
 }

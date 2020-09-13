@@ -1,23 +1,24 @@
 {
-    "name": "dwapp/api",
-    "description": "Temporary API endpoints for the DW apps during development",
+    "name": "mindyourteam/urls",
+    "description": "An URL shortener for your team",
     "type": "library",
     "authors": [
         {
             "name": "Olav Schettler",
-            "email": "olav.schettler@dw.com"
+            "email": "olav@schettler.net"
         }
     ],
-    "require": {},
+    "require": {
+    },
     "autoload": {
         "psr-4": {
-            "Dwapp\\Api\\": "src/"
+            "Mindyourteam\\Urls\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dwapp\\Api\\ServiceProvider"
+                "Mindyourteam\\Urls\\ServiceProvider"
             ]
         }
     }

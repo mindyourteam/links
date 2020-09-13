@@ -1,3 +1,3 @@
 <?php
 
-Route::get('api/content', 'ApiController@content')->name('api.content');
+Route::get('links/admin', 'ApiController@content')->name('links.admin');
