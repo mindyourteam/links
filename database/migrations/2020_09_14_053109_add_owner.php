@@ -14,7 +14,7 @@ class AddOwner extends Migration
     public function up()
     {
         Schema::table('links', function (Blueprint $table) {
-            $table->bigBnteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
