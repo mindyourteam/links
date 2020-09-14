@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Pagination\Paginator;
+use Mindyourteam\Links\Models\Link;
+use Mindyourteam\Links\Observers\LinkObserver;
 
 class ServiceProvider extends IlluminateServiceProvider
 {
@@ -18,6 +20,8 @@ class ServiceProvider extends IlluminateServiceProvider
 
     public function boot()
     {
+        Link::observe(LinkObserver::class);
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->mergeConfigFrom(
