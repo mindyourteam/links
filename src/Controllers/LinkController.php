@@ -51,6 +51,6 @@ class LinkController extends Controller
 
     public function show(Link $link)
     {
-        return redirect($link->url);
+        return redirect(str_replace('{today}', date('Y-m-d'), $link->url));
     }
 }
